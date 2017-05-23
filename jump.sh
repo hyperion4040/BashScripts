@@ -1,18 +1,23 @@
 #!/bin/bash
 if [ -z "$1" ]; then
-		cd /home/hyperion/Dokumenty/Projects
+		cd ~/Dokumenty/Projects
 else
 	case $1 in
-		clion) cd /home/hyperion/Dokumenty/Projects/CLionProjects
-		;;
-		idea) cd /home/hyperion/Dokumenty/Projects/IdeaProjects
-		;;
-		pychar) cd /home/hyperion/Dokumenty/Projects/PycharmProjects
-		;;		
-		oracle) cd /home/hyperion/Dokumenty/Projects/AdvancedDB
-		;;
+		clion) 
+			cd ~/Dokumenty/Projects/CLionProjects;;
+		idea) 
+			cd ~/Dokumenty/Projects/IdeaProjects;;
+		pychar) 
+			cd ~/Dokumenty/Projects/PycharmProjects;;
+				
+		db) 
+			cd ~/Dokumenty/Projects/AdvancedDB;;
+		bash) 
+			cd ~/Dokumenty/Projects/BashScripts;;
 		*)
 			echo "wrong option"
+			exit 1
 	esac
 
 fi
+exec bash
