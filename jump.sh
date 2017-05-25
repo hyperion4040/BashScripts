@@ -16,8 +16,9 @@ else
 			cd ~/Dokumenty/Projects/BashScripts;;
 		*)
 			echo "wrong option"
-			exit 1
 	esac
 
 fi
 exec bash
+
+
