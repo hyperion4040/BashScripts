@@ -1,5 +1,5 @@
 #!/bin/bash
-if [  "$1" == kill ]; then
+if [  "$1" == stop ]; then
 echo "Container of DB with id = $(docker stop $(docker ps -q)) was stopped"
 if [ "$(docker ps -aq -f status=exited -f status=created)" ]; then
 echo "Container of DB with id = $(docker rm $(docker ps -q -f status=exited -f status=created)) was removed"
