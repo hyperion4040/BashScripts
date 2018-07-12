@@ -13,8 +13,10 @@ echo "Constainer of MySQL DB with id = $(docker run -d -t -p 3306:3306 -e MYSQL_
 postgres)
 echo "Container of postgres DB with id = $(docker run --name some-postgres -e POSTGRES_PASSWORD=mysecretpassword -d postgres) had been created and is running";;
 psql) 
-echo "Container of postgres DB with id = $(docker run --name some-postgres -e POSTGRES_PASSWORD=mysecretpassword -d postgres) had been created and is running";;
-echo "Acces do postgres by bash $(docker run -it --rm --link some-postgres:postgres postgres psql -h postgres -U postgres)"
+echo "Container of postgres DB with id = $(docker run --name some-postgres -e POSTGRES_PASSWORD=mysecretpassword -d postgres) had been created and is running"
+echo "Access do postgres by bash $(docker run -it --rm --link some-postgres:postgres postgres psql -h postgres -U postgres)";;
+youtrack)
+echo "Container of youtrack with id = $( docker run -d --name youtrack -v ~/Tools/youtrack/data:/opt/youtrack/data -v ~/Tools/youtrack/conf:/opt/youtrack/conf -v ~/Tools/youtrack/logs:/opt/youtrack/logs -v ~/Tools/youtrack/backups:/opt/youtrack/backups -p 8088:8080 jetbrains/youtrack:2018.2.43142 ) had been created and is running. Access can be made by localhost:8088";;
 *)
 echo "Actually you can choose Oracle or MySQL DB and run in container"
 exit 1
